@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Analysis Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+        h1 {
+            margin-bottom: 30px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        .upload-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .file-input {
+            display: none;
+        }
+        .file-label {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+        .file-label:hover {
+            background-color: #2980b9;
+        }
+        .submit-btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background-color: #27ae60;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .feature {
+            text-align: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        .feature img {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header animate__animated animate__fadeInDown">
+        <h1>Contract Analysis Pro</h1>
+    </div>
+    <div class="container">
+        <h2 class="animate__animated animate__fadeInUp">Upload Your Business Contract</h2>
+        <div class="upload-section animate__animated animate__fadeInUp animate__delay-1s">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="file" class="file-input">
+                <label for="file" class="file-label">Choose File</label>
+                <br>
+                <input type="submit" value="Analyze Contract" class="submit-btn">
+            </form>
+        </div>
+        <div class="features animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="feature">
+                <img src="https://img.icons8.com/color/96/000000/search-property.png" alt="Analyze">
+                <h3>Deep Analysis</h3>
+                <p>Advanced AI-powered contract analysis</p>
+            </div>
+            <div class="feature">
+                <img src="https://img.icons8.com/color/96/000000/compare.png" alt="Compare">
+                <h3>Quick Comparison</h3>
+                <p>Compare against industry standards</p>
+            </div>
+            <div class="feature">
+                <img src="https://img.icons8.com/color/96/000000/trust.png" alt="Secure">
+                <h3>Secure & Confidential</h3>
+                <p>Your data is always protected</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Contract Analysis Pro. All rights reserved.
+    </footer>
+    <script>
+        document.querySelector('.file-input').addEventListener('change', function(e){
+            let fileName = e.target.files[0].name;
+            document.querySelector('.file-label').textContent = fileName;
+        });
+    </script>
+</body>
+</html>

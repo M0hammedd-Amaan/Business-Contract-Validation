@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContractGuard Pro - Business Contract Validation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-bg: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .deviation-tag {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .high-deviation { background-color: #e74c3c; color: white; }
+        .significant-deviation { background-color: #e67e22; color: white; }
+        .moderate-deviation { background-color: #f1c40f; color: black; }
+        .minor-deviation { background-color: #2ecc71; color: white; }
+        .minimal-deviation { background-color: #1abc9c; color: white; }
+
+        .highlighted-text {
+            line-height: 1.8;
+            font-size: 16px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-menu {
+                margin-top: 20px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">ContractGuard Pro</a>
+            <nav class="nav-menu">
+                <a href="#"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-file-contract"></i> Services</a>
+                <a href="#"><i class="fas fa-user"></i> About Us</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Business Contract Validation Report</h1>
+
+        <section class="section">
+            <h2><i class="fas fa-file-alt"></i> User's Contract</h2>
+            <div>
+                {% for clause in user_clauses %}
+                    <p>{{ clause['clause'] }}</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-tag"></i> Named Entities</h2>
+            {% set entity_types = entities | groupby('1') %}
+            {% for type, entities_list in entity_types %}
+                <h3>{{ type }}</h3>
+                <ul>
+                    {% for entity, _ in entities_list %}
+                        <li>{{ entity }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-chart-bar"></i> Deviations Analysis</h2>
+            <table>
+                <tr>
+                    <th>User Clause</th>
+                    <th>Category</th>
+                    <th>Similarity</th>
+                    <th>Deviation Type</th>
+                </tr>
+                {% for deviation in deviations %}
+                <tr>
+                    <td>{{ deviation.get('user_clause', 'N/A') }}</td>
+                    <td>{{ deviation.get('category', 'N/A') }}</td>
+                    <td>{{ "{:.2f}%".format(deviation.get('similarity', 0) * 100) }}</td>
+                    <td>
+                        <span class="deviation-tag {{ deviation.get('deviation_type', '').lower().replace(' ', '-') }}">
+                            {{ deviation.get('deviation_type', 'N/A') }}
+                        </span>
+                    </td> 
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-highlighter"></i> Highlighted Contract with Deviations</h2>
+            <div class="highlighted-text">
+                {{ highlighted_contract|safe }}
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-file-alt"></i> Contract Summary</h2>
+            <p>{{ summary }}</p>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-comment-alt"></i> Provide Your Feedback</h2>
+            <form class="feedback-form" action="/feedback" method="POST">
+                <textarea id="feedback" name="feedback" rows="4" placeholder="We value your input. Please share your thoughts on the contract analysis..."></textarea>
+                <button type="submit" class="btn">Submit Feedback</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ContractGuard Pro. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

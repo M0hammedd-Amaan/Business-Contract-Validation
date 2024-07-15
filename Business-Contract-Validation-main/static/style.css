@@ -1,0 +1,45 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.section h3 {
+    color: var(--secondary-color);
+    font-size: 1.4em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.section ul li {
+    background-color: #f8f9fa;
+    margin-bottom: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.section ul li:nth-child(even) {
+    background-color: #e9ecef;
+}
+
+h1 {
+    color: #343a40;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.table {
+    margin-top: 20px;
+}
